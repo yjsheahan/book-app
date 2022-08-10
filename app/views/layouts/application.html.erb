@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BookApp</title>
+    <title>Read and Review</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,15 @@
   </head>
 
   <body>
+    <header>
+      <h1>Read and Review</h1>
+      <h2>Share reviews on your favourite books or find your next read!</h2>
+    </header>
+
     <%= yield %>
+
+    <footer>
+      <p>Copyright Read and Review 2020</p>
+    </footer>
   </body>
 </html>
