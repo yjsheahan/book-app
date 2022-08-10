@@ -1,0 +1,12 @@
+<h1><%= @review.title %></h1>
+<p><%= @review.author %></p>
+
+<div class="score">
+    <%= @review.score %> / 10
+</div>
+<div class="body">
+    <%= simple_format @review.body %>
+</div>
+<div class="genre">
+    <%= @review.genre %>
+</div>
