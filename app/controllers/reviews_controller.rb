@@ -32,6 +32,26 @@ class ReviewsController < ApplicationController
 
     end
 
+    def edit
+
+        # find individual review
+        @review = Review.find(params[:id])
+
+    end
+
+    def update
+
+        # find individual review
+        @review = Review.find(params[:id])
+
+        # update with new info from form
+        @review.update(params.require(:review).permit(:title, :body, :score, :author, :genre))
+
+        # redirect to individual review page
+        redirect_to review_path(@review)
+
+    end
+
     def destroy
         # find the individual review
         @review = Review.find(params[:id])
