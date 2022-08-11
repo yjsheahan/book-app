@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
     def create
 
         # take info from form and add it to the DB
-        @review = Review.new(params.require(:review).permit(:title, :body, :score, :author, :genre))
+        @review = Review.new(form_params)
 
         # save this to the DB
         @review.save
@@ -45,7 +45,7 @@ class ReviewsController < ApplicationController
         @review = Review.find(params[:id])
 
         # update with new info from form
-        @review.update(params.require(:review).permit(:title, :body, :score, :author, :genre))
+        @review.update(form_params)
 
         # redirect to individual review page
         redirect_to review_path(@review)
@@ -62,6 +62,10 @@ class ReviewsController < ApplicationController
         # redirect to homepage
         redirect_to root_path
 
+    end
+
+    def form_params
+        params.require(:review).permit(:title, :body, :score, :author, :genre)
     end
     
 end
