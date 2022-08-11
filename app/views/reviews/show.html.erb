@@ -10,3 +10,5 @@
 <div class="genre">
     <%= @review.genre %>
 </div>
+
+<%= button_to "Delete this review", review_path(@review), method: :delete, onclick: "return confirm('Are you sure?')" %>

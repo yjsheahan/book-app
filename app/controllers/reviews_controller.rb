@@ -31,5 +31,17 @@ class ReviewsController < ApplicationController
         @review = Review.find(params[:id])
 
     end
+
+    def destroy
+        # find the individual review
+        @review = Review.find(params[:id])
+
+        # destroy
+        @review.destroy
+
+        # redirect to homepage
+        redirect_to root_path
+
+    end
     
 end
